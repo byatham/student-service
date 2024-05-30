@@ -1,0 +1,57 @@
+// creating student sample data
+
+{
+
+"firstName": "Balaiah",
+"lastName": "Yatham",
+"email": "balaiahy23@gmail.com",
+"street": "Ayodyanagar",
+"city": "Hyderabad",
+"subjectsLearning":[
+   {
+    "subjectName": "Java",
+    "marksObtained": 95.0
+   },
+    {
+    "subjectName": "CSS",
+    "marksObtained": 99.0
+   }, {
+    "subjectName": "JSP",
+    "marksObtained": 96.0
+   }
+
+]
+
+
+
+}
+
+
+*************************
+
+{
+
+"firstName": "Chandrashekar",
+"lastName": "Putta",
+"email": "chandrashekar.putta23@gmail.com",
+"street": "Ayodyanagar",
+"city": "Hyderabad",
+"subjectsLearning":[
+   {
+    "subjectName": "Dotnet",
+    "marksObtained": 98.0
+   },
+    {
+    "subjectName": "HTML",
+    "marksObtained": 94.0
+   }, {
+    "subjectName": "Servlet",
+    "marksObtained": 92.0
+   }
+
+]
+
+
+
+}
+
