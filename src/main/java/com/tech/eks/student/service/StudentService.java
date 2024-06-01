@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.tech.eks.student.entity.Address;
 import com.tech.eks.student.entity.Student;
 import com.tech.eks.student.entity.Subject;
+import com.tech.eks.student.global.ResourceNotFoundException;
 import com.tech.eks.student.repository.AddressRepository;
 import com.tech.eks.student.repository.StudentRepository;
 import com.tech.eks.student.repository.SubjectRepository;
@@ -31,6 +32,8 @@ public class StudentService {
 	
 	@Autowired
 	SubjectRepository subjectRepository;
+	
+	List<Student> studentsList=new ArrayList<>();
 	
 	public List<Student> getAllStudents () {
 		return studentRepository.findAll();
@@ -88,7 +91,17 @@ public class StudentService {
 	}
 	
 	public List<Student> getByFirstName (String firstName) {
-		return studentRepository.findByFirstName(firstName);
+		
+			studentsList = studentRepository.findByFirstName(firstName);
+			 if(!studentsList.isEmpty())
+			 {
+				 return studentsList;
+			 }
+			 else
+			 {
+				 System.out.println("List is Empty....");
+				 throw new ResourceNotFoundException("Student not found with given details");
+			 }	
 	}
 	
 	public Student getByFirstNameAndLastName (String firstName, String lastName) {

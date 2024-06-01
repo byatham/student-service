@@ -24,8 +24,11 @@ import com.tech.eks.student.request.UpdateStudentRequest;
 import com.tech.eks.student.response.StudentResponse;
 import com.tech.eks.student.service.StudentService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
-@RequestMapping("/api/student/")
+@RequestMapping("/student/")
+@Slf4j
 public class StudentController {
 	
 
@@ -37,43 +40,50 @@ public class StudentController {
 	
 	@GetMapping("getAll")
 	public List<StudentResponse> getAllStudents () {
+		log.info("inside getAllStudents () ");
 		List<Student> studentList = studentService.getAllStudents();
 		List<StudentResponse> studentResponseList = new ArrayList<StudentResponse>();
 		
 		studentList.stream().forEach(student -> {
 			studentResponseList.add(new StudentResponse(student));
 		});
+		log.info("inside getAllStudents () ends  "+studentList);
 		
 		return studentResponseList;
 	}
 	
 	@PostMapping("create")
 	public StudentResponse createStudent (@Validated @RequestBody CreateStudentRequest createStudentRequest) {
-		System.out.println("appName "+appName);
+		log.info("inside createStudent () ");
+
 		Student student = studentService.createStudent(createStudentRequest);
+		log.info("inside createStudent () "+student);
 		
 		return new StudentResponse(student);
 	}
 	
 	@PutMapping("update")
 	public StudentResponse updateStudent (@Validated @RequestBody UpdateStudentRequest updateStudentRequest) {
+		log.info("inside updateStudent () ");
+
 		Student student = studentService.updateStudent(updateStudentRequest);
-		
+		log.info("inside updateStudent () "+student);
+
 		return new StudentResponse(student);
 	}
 	
-	/*@DeleteMapping("delete")
-	public String deleteStudent (@RequestParam long id) {
-		return studentService.deleteStudent(id);
-	}*/
 	
 	@DeleteMapping("delete/{id}")
 	public String deleteStudent (@PathVariable long id) {
+		log.info("inside deleteStudent () ");
+
 		return studentService.deleteStudent(id);
 	}
 	
 	@GetMapping("getByFirstName/{firstName}")
 	public List<StudentResponse> getByFirstName (@PathVariable String firstName) {
+		log.info("inside getByFirstName () ");
+
 		List<Student> studentList = studentService.getByFirstName(firstName);
 		
 		List<StudentResponse> studentResponseList = new ArrayList<StudentResponse>();
@@ -81,6 +91,8 @@ public class StudentController {
 		studentList.stream().forEach(student -> {
 			studentResponseList.add(new StudentResponse(student));
 		});
+		log.info("inside getByFirstName ()  ends ");
+
 		
 		return studentResponseList;
 	}
@@ -94,6 +106,9 @@ public class StudentController {
 	@GetMapping("getByFirstNameOrLastName/{firstName}/{lastName}")
 	public List<StudentResponse> getByFirstNameOrLastName (@PathVariable String firstName, 
 			@PathVariable String lastName) {
+		
+		log.info("inside getByFirstNameOrLastName () ");
+
 		List<Student> studentList = studentService.getByFirstNameOrLastName(firstName, lastName);
 		
 		List<StudentResponse> studentResponseList = new ArrayList<StudentResponse>();
@@ -101,13 +116,16 @@ public class StudentController {
 		studentList.stream().forEach(student -> {
 			studentResponseList.add(new StudentResponse(student));
 		});
-		
+		log.info("inside getByFirstNameOrLastName () ends  "+studentResponseList);
+
 		return studentResponseList;
 	}
 	
 	@GetMapping("getByFirstNameIn")
 	public List<StudentResponse> getByFirstNameIn (
 			@RequestBody InQueryRequest inQueryRequest) {
+		log.info("inside getByFirstNameIn ()   ");
+
 		List<Student> studentList = studentService.getByFirstNameIn(inQueryRequest);
 		
 		List<StudentResponse> studentResponseList = new ArrayList<StudentResponse>();
@@ -115,13 +133,16 @@ public class StudentController {
 		studentList.stream().forEach(student -> {
 			studentResponseList.add(new StudentResponse(student));
 		});
-		
+		log.info("inside getByFirstNameIn () ends  "+studentResponseList);
+
 		return studentResponseList;
 	}
 	
 	@GetMapping("getAllWithPagination")
 	public List<StudentResponse> getAllStudentsWithPagination (@RequestParam int pageNo,
 			@RequestParam int pageSize) {
+		log.info("inside getAllStudentsWithPagination ()  ");
+
 		
 		List<Student> studentList = studentService.
 				getAllStudentsWithPagination(pageNo, pageSize);
