@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class StudentServiceApplication {
 
 	public static void main(String[] args) {
-		System.out.println("************ StudentServiceApplication strts *******************");
+		System.out.println("************ StudentServiceApplication strts &&&& *******************");
 		SpringApplication.run(StudentServiceApplication.class, args);
 		System.out.println("************ StudentServiceApplication ends {} *******************");
 
