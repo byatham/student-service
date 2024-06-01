@@ -27,7 +27,7 @@ import com.tech.eks.student.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/student/")
+@RequestMapping("/student")
 @Slf4j
 public class StudentController {
 	

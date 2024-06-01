@@ -2,7 +2,7 @@ package com.tech.eks.student.response;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import com.tech.eks.student.entity.Student;
 import com.tech.eks.student.entity.Subject;
 
@@ -15,7 +15,7 @@ public class StudentResponse {
 
 	private long id;
 
-	@JsonProperty("first_name")
+	//@JsonProperty("first_name")
 	private String firstName;
 
 	private String lastName;
