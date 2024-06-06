@@ -85,7 +85,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>student-service-registry</finalName>
+		<finalName>student-service</finalName>
 	</build>
 
 </project>
