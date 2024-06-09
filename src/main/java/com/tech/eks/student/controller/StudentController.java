@@ -3,7 +3,6 @@ package com.tech.eks.student.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.annotation.Validated;
@@ -27,6 +26,7 @@ import com.tech.eks.student.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
+//@Service //Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/student/getAll.]
 @RequestMapping("/student")
 @Slf4j
 public class StudentController {

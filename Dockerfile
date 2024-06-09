@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copy the executable JAR file to the container
-COPY target/student-service.jar student-service.jar
+COPY  target/student-service.jar  /app/student-service.jar
 
 # Make port 9091 available to the world outside this container
 EXPOSE 9091
