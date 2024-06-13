@@ -41,6 +41,7 @@ public class StudentController {
 	@GetMapping("getAll")
 	public List<StudentResponse> getAllStudents () {
 		log.info("inside getAllStudents () ");
+		//int c=10/0;
 		List<Student> studentList = studentService.getAllStudents();
 		List<StudentResponse> studentResponseList = new ArrayList<StudentResponse>();
 		
