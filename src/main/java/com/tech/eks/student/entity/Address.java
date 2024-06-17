@@ -1,6 +1,7 @@
 package com.tech.eks.student.entity;
 
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "address")
-public class Address {
+public class Address{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

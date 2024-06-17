@@ -1,5 +1,6 @@
-/*
- * package com.tech.eks.student.config;
+
+ package com.tech.eks.student.config;
+ /*
  * 
  * import io.swagger.v3.oas.models.OpenAPI; import
  * io.swagger.v3.oas.models.info.Info; import lombok.extern.slf4j.Slf4j;

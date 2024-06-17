@@ -1,4 +1,4 @@
-package com.tech.eks.student.global;
+package com.tech.eks.student.global.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     /**

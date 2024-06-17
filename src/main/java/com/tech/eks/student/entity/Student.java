@@ -48,5 +48,6 @@ public class Student {
 		this.firstName = createStudentRequest.getFirstName();
 		this.lastName = createStudentRequest.getLastName();
 		this.email = createStudentRequest.getEmail();
+		
 	}
 }
