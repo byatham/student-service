@@ -13,13 +13,13 @@
   { 
 	  public KafkaConfiguration()
   { 
-		  System.out.println("KafkaConfiguration is created ***** ");
+		  System.out.println(" ***** Kafka Configuration is created ***** ");
 		  }
   
   @Bean
   NewTopic createTopic() {
-	  return TopicBuilder.name("student-events-topic") .partitions(3) .replicas(1)
-                         .configs(Map.of("min.insync.replicas","1")) .build(); }
+	  return TopicBuilder.name("product-events-topic") .partitions(3) .replicas(1)
+                         .configs(Map.of("min.insync.replicas","3")) .build(); }
   
   }
  

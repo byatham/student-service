@@ -26,7 +26,7 @@ public class StudentServiceApplication {
 		//Thread.sleep(20000);// Intentionally wrote this to see system delay
 		SpringApplication.run(StudentServiceApplication.class, args);
 		long endTime=System.currentTimeMillis();
-		
+		log.info("Application has been started  ***** ");
 		log.info("************ StudentServiceApplication total time taken for startup in milli seconds {} ******************* -> "+(endTime-startTime)/1000);
 
 	}
