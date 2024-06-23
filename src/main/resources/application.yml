@@ -10,3 +10,9 @@ management:
   endpoint:
     prometheus:
       enabled: true
+server:
+ port: 9091
+spring:
+ profiles:
+    active:
+    - dev     
