@@ -3,11 +3,14 @@ package com.tech.eks.student;
 import java.time.LocalDateTime;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 import lombok.extern.slf4j.Slf4j;
@@ -30,5 +33,10 @@ public class StudentServiceApplication {
 		log.info("************ StudentServiceApplication total time taken for startup in milli seconds {} ******************* -> "+(endTime-startTime)/1000);
 
 	}
+	@Bean
+    MeterRegistryCustomizer<MeterRegistry> metricsCommonTags() {
+        return registry -> registry.config().commonTags("application", "student-service");
+    }
+
 	
 }
